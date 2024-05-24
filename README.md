@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Прототип веб-приложения-магазина
 
-## Getting Started
+Простое веб-приложение для магазина с использованием [Fake Store API](https://fakestoreapi.com/docs).
 
-First, run the development server:
+## Описание
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Данное приложение позволяет пользователям просматривать список товаров, просматривать детали отдельных товаров, а также выполнять CRUD операции с товарами. Пользователи могут управлять своей корзиной, добавляя, обновляя и удаляя товары. Реализована авторизация, токены сохраняются в куках для использования во всём приложении. При первом заходе пользователя на сайт с токеном выполняется запрос для получения и записи информации о пользователе в Redux.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Функциональность
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Авторизация пользователей с сохранением токена в куках.
+- Просмотр списка товаров.
+- Просмотр деталей отдельных товаров.
+- CRUD операции для товаров.
+- Управление корзиной (добавление, обновление, удаление товаров).
+- Адаптивный дизайн, который подстраивается под разрешения экранов от 360 до 1920 пикселей.
+- Сохранение состояния корзины между сессиями.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Используемые технологии и библиотеки
 
-## Learn More
+- Next.js
+- React
+- Redux
+- Ant Design (UI kit)
+- Axios
 
-To learn more about Next.js, take a look at the following resources:
+## Запуск приложения локально
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Предварительные требования
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Убедитесь, что у вас установлены:
 
-## Deploy on Vercel
+- Node.js
+- npm (Node Package Manager)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Установка
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Клонируйте репозиторий на ваш компьютер:
+
+   ```bash
+   git clone <URL вашего репозитория>
+   ```
+
+2. Перейдите в директорию проекта:
+   cd online-store
+
+3. Установите зависимости:
+   npm install
+
+4. Запустите приложение:
+   npm run dev
+
+После выполнения этих шагов, приложение будет доступно по адресу http://localhost:3000/.
