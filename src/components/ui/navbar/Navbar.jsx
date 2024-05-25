@@ -18,6 +18,21 @@ const Navbar = () => {
   const { token } = theme.useToken();
   const primaryColor = token.colorPrimary;
 
+  const breadcrumbItemObjects = breadcrumbItems.map((item, index) => ({
+    key: index,
+    title: (
+      <Link
+        style={{
+          margin: "0 40px",
+          color: pathname === item.url ? primaryColor : "",
+        }}
+        href={item.url}
+      >
+        {item.title}
+      </Link>
+    ),
+  }));
+
   return (
     <Row justify="center" style={{ margin: "10px" }}>
       <Col>
@@ -27,21 +42,8 @@ const Navbar = () => {
             justifyContent: "center",
             margin: "10px",
           }}
-        >
-          {breadcrumbItems.map((item, index) => (
-            <Breadcrumb.Item key={index}>
-              <Link
-                style={{
-                  margin: "0 40px",
-                  color: pathname === item.url ? primaryColor : "",
-                }}
-                href={item.url}
-              >
-                {item.title}
-              </Link>
-            </Breadcrumb.Item>
-          ))}
-        </Breadcrumb>
+          items={breadcrumbItemObjects}
+        />
       </Col>
     </Row>
   );

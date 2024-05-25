@@ -13,18 +13,20 @@ export default function Home() {
         <Image
           src="/hero.jpg"
           alt="hero image"
-          layout="responsive"
           width={500}
           height={500}
+          style={{ objectFit: "contain", width: "100%", height: "auto" }}
+          priority
         />
       </Col>
       <Col span={12}>
         <Image
           src="/clothes.png"
           alt="clothes image"
-          layout="responsive"
           width={500}
           height={500}
+          style={{ objectFit: "contain", width: "100%", height: "auto" }}
+          priority
         />
         <Typography style={{ textAlign: "left", marginTop: "25px" }}>
           Some description text about the product. This is where you provide

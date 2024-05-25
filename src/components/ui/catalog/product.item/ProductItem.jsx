@@ -12,7 +12,14 @@ const ProductItem = (props) => {
       hoverable
       cover={
         <div style={{ position: "relative", width: "100%", height: 300 }}>
-          <Image alt={title} src={image} layout="fill" objectFit="contain" />
+          <Image
+            alt={title}
+            src={image}
+            fill
+            style={{ objectFit: "contain" }}
+            sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 300px"
+            priority
+          />
         </div>
       }
     >

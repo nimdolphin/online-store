@@ -11,6 +11,15 @@ export const ProductService = {
     });
     return data;
   },
+
+  async getById(id) {
+    const { data } = await axios({
+      url: `${API_BASE_URL}/products/${id}`,
+      method: "GET",
+    });
+    console.log(data);
+    return data;
+  },
 };
 
 export const addUser = async (user) => {
