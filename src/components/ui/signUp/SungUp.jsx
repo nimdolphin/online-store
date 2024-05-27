@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Form, Input, Button, message } from "antd";
-import { addUser } from "@/utils/data";
+import { addUser } from "@/api/data";
 
 const formFields = [
   { name: "email", label: "Email", rules: [{ required: true }] },

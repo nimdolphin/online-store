@@ -1,5 +1,5 @@
 import Catalog from "@/components/ui/catalog/Catalog";
-import { ProductService } from "@/utils/data";
+import { ProductService } from "@/api/data";
 
 async function getProducts() {
   const data = await ProductService.getAll();

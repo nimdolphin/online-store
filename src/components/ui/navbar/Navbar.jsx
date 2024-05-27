@@ -5,15 +5,16 @@ import { usePathname } from "next/navigation";
 import { Breadcrumb, Row, Col } from "antd";
 import { theme } from "antd";
 
+const breadcrumbItems = [
+  { title: "Home", url: "/" },
+  { title: "Catalog", url: "/catalog" },
+  { title: "Log In", url: "/login" },
+  { title: "Sign up", url: "/authorization" },
+  { title: "Cart", url: "/cart" },
+];
+
 const Navbar = () => {
   const pathname = usePathname();
-
-  const breadcrumbItems = [
-    { title: "Home", url: "/" },
-    { title: "Catalog", url: "/catalog" },
-    { title: "Log In", url: "/login" },
-    { title: "Sign up", url: "/authorization" },
-  ];
 
   const { token } = theme.useToken();
   const primaryColor = token.colorPrimary;

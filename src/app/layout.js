@@ -1,14 +1,15 @@
 "use client";
+
 import React from "react";
 import { Provider } from "react-redux";
-import store from "@/store";
 import { useEffect } from "react";
+import store from "@/store";
 import { useDispatch } from "react-redux";
-import { setUser } from "@/store/userSlice";
 import Cookies from "js-cookie";
-import { getUserInfo } from "@/utils/data";
-import { Inter } from "next/font/google";
+import { getUserInfo } from "@/api/data";
 import Navbar from "@/components/ui/navbar/Navbar";
+import { setUser } from "@/store/userSlice";
+import { Inter } from "next/font/google";
 import { Col, Row } from "antd";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,13 +25,13 @@ function AppProvider({ children }) {
           const userInfo = await getUserInfo(token);
           dispatch(setUser({ user: userInfo, token }));
         } catch (error) {
-          console.error("Error fetching user info:", error);
           Cookies.remove("token");
         }
       };
       fetchUserInfo();
     }
   }, [dispatch]);
+
   return <>{children}</>;
 }
 

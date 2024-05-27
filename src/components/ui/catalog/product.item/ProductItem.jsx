@@ -4,8 +4,8 @@ import { Card, Rate, Typography } from "antd";
 const { Meta } = Card;
 const { Text, Paragraph } = Typography;
 
-const ProductItem = (props) => {
-  const { title, category, description, price, image, rating } = props;
+const ProductItem = ({ product }) => {
+  const { title, category, description, price, image, rating } = product;
 
   return (
     <Card

@@ -1,4 +1,4 @@
-import { ProductService } from "@/utils/data";
+import { ProductService } from "@/api/data";
 import { notFound } from "next/navigation";
 
 import ListItem from "@/components/ui/listItem/ListItem";
